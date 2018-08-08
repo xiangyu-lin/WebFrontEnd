@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>背景1</title>
+		<style media="screen">
+			.box1{
+				width: 500px;
+				height: 500px;
+				background-color: #bfa;
+				margin: 0 auto;
+
+				/*
+				 * 使用 background-image 来设置背景图片
+				 * - 语法：
+				 *		background-image:url(相对路径); 相对路径写在哪就相对哪
+				 *
+				 *	- 如果背景图片大于元素 默认会显示图片的左上角
+				 *	- 一样大 则全部显示图片
+				 *	- 如果背景图片小于背景 则平铺充满元素
+				 *
+				 *	可以同时为一个元素指定背景颜色和背景图片
+				 *		这样背景颜色将会作为背景图片的底色
+				 */
+
+				background-image: url(img/img2.jpg);
+
+				/*
+				 * background-repeat 用于设置背景图片的重复方式
+				 *	可选值：
+				 *		repeat 默认值 背景图片会双向重复（平铺）
+				 *		no-repeat 不重复
+				 *		repeat-x  沿x轴水平重复
+				 *		repeat-y 垂直重复
+				 */
+				background-repeat: repeat-y;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>否定伪类选择器</title>
+		<style type="text/css">
+			 /*
+			  *为所有的p元素设置一个背景颜色为黄色,除了class值为yellow的
+			  *  否定伪类
+			  * 	- 作用： 可以从已选中的元素中提出某些元素
+			  * 	- 语法：
+			  *				:not(选择器)
+			  */
+
+			 p:not(.hello){
+				 background-color: red;
+			 }
+
+		</style>
+	</head>
+	<body>
+		<p>This is a P.</p>
+		<p class="hello" >This is a P.</p>
+		<p>This is a P after span.</p>
+		<p>This is a P.</p>
+	</body>
+</html>

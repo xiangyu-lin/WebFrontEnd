@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>解决高度塌陷3</title>
+		<style media="screen">
+			.box1{
+				border: 1px solid red;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				float: left;
+			}
+
+			/*
+			 * 通过after伪类，选中box1的后边
+			 * 	可以通过after伪类 向元素最后添加一个空白的元素，然后对其清除浮动
+			 *	这样做和添加div原理一样 效果相同
+			 *	推荐使用 几乎无副作用
+			 */
+
+			.clearfix:after{
+				/* 添加内容并转换成块元素 */
+				content: "";
+				display: block;
+
+				/* 清除浮动 */
+				clear: both;
+			}
+
+			/*
+			 * IE 6 不支持 :after伪类
+			 * 所以在IE6中还需要使用 hasLayout 处理
+			 */
+			.clearfix{
+				zoom:1;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box1 clearfix">
+			<div class="box2">
+			</div>
+		</div>
+	</body>
+</html>

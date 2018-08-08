@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>练习 超链接2</title>
+	</head>
+	<body>
+		<center>
+			<!--
+				跳转到id为bottom的元素所在的位置
+				直接在href中写 #id属性值
+			-->
+			<a href="#bottom">去底部</a>
+
+			<h1>This is my blog!</h1>
+			<hr>
+			<h2>东风破</h2>
+
+			<!-- 创建超链接时地址不确定先用 #  -->
+			<a href="https://baike.baidu.com/item/%E5%91%A8%E6%9D%B0%E4%BC%A6/129156?fr=aladdin" target="_blank">周杰伦</a>
+			<br>
+			<br>
+			<img src="http://www.doer.ren/ari.jpg" width="200px">
+			<p>
+				谁在用琵琶弹奏一曲东风破 <br>
+				枫叶将故事染色结局我看透 <br>
+				篱笆外的古道我牵着你走过 <br>
+				荒烟漫草的年头就连分手都很沉默 <br>
+				谁在用琵琶弹奏一曲东风破 <br>
+				岁月在墙上剥落看见小时候 <br>
+				犹记得那年我们都还很年幼 <br>
+				而如今琴声幽幽我的等候你没听过 <br>
+				谁在用琵琶弹奏一曲东风破 <br>
+				枫叶将故事染色结局我看透 <br>
+				篱笆外的古道我牵着你走过 <br>
+				荒烟漫草的年头就连分手都很沉默
+			</p>
+
+			<hr>
+
+			友情链接: <a href=""></a>
+			<br>
+			<!--
+				如果将链接地址设置为 # ；点击会回到顶部。
+
+				html 中有一个属性所有元素都能设置，该属性作为标签的唯一标识
+				这个属性是 id，id属性在同一页面不能重复
+			-->
+
+			<a id="bottom" href="#">回到顶部</a> |
+
+			<!--
+			 	发送电子邮件超链接，点击打开默认邮件客户端，
+					并将收件人设置为 mailto 后的邮件地址
+				href="mailto：邮件地址"
+			-->
+
+			<a href="mailto:3139303033@qq.com">联系我们</a>
+
+		</center>
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格样式</title>
+		<style media="screen">
+
+			table{
+				/* 宽度 */
+				width: 300px;
+				/* 居中 */
+				margin: 0 auto;
+				/* 边框 */
+				/* border: 1px solid black; */
+
+				/*
+				 * table 和td 之间边框有个距离可以用 border-spacing 调整距离
+				 */
+				/* border-spacing: 0px; */
+
+				/*
+				 * border-collapse 可以用来设置表格边框合并
+				 * 如果设置边框合并  border-spacing 自动失效
+				 */
+				border-collapse: collapse;
+
+				/* 设置背景颜色 */
+				/* background-color: #bfa; */
+			}
+
+			/* 设置边框 */
+			td , th{
+				border: 1px solid black;
+			}
+
+			/* 变色 IE8 及以下不支持 兼容只能用js实现 */
+			/* 设置各行变色 */
+			tr:nth-child(even){
+				background-color: #bfa;
+			}
+
+			/* 移入行中变色 */
+			tr:hover{
+				background-color: yellow;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<!-- table 块元素 -->
+		<table>
+			<tr>
+				<!--
+					可用 th 标签表示表头内容
+					用法和 td 一样 只不过会有默认样式
+				-->
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>住址</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>熏悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>居悟能</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>瞎悟净</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>唐僧</td>
+				<td>男</td>
+				<td>女儿国</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>熏悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>居悟能</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>瞎悟净</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>唐僧</td>
+				<td>男</td>
+				<td>女儿国</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>熏悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>居悟能</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>瞎悟净</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>唐僧</td>
+				<td>男</td>
+				<td>女儿国</td>
+			</tr>
+
+		</table>
+	</body>
+</html>

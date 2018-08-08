@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>绝对定位</title>
+		<style media="screen">
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+
+				/*
+				 * 当position属性值设置为absolute时，则开启了元素的绝对定位
+				 *
+				 * 绝对定位
+				 *	 1.开启绝对定位会使元素脱离文档流
+				 *	 2.开启绝对定位后不设置偏移量，则元素位置不会发生变化
+				 *   3.绝对定位是相当于理他最近的开启了定位的祖先元素进行定位的
+				 *		（一般情况下开启子元素的绝对定位 也要同时开启父元素定位）
+				 *		如果所有的祖先元素都没开启定位，则相对于浏览器窗口进行定位
+				 *	4.绝对定位会使元素提升一个层级
+				 *	5.绝对定位会改变元素的性质
+				 *		内联元素会变成块元素
+				 *		块元素的宽高默认都会被内容撑开
+				 *
+				 */
+
+				position: absolute;
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+
+		</div>
+		<div class="box2">
+
+		</div>
+		<div class="box3">
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>超链接</title>
+	</head>
+	<body>
+		<!--
+			使用a标签创建一个超链接
+			属性：
+				href： 指向链接跳转的目标地址，可以是相对或是绝对路径
+		-->
+
+		<a href="http://www.doer.ren" >我是一个超链接</a>
+
+		<!--
+			a 标签中的target 属性可以用来指定打开链接的位置
+				可选值
+					_self : 表示当前窗口中打开（默认值）
+					_blank : 在新的窗口中打开
+					可以设置内联框架的name属性值，链接将会在指定的内联框架中打开
+		-->
+		<a href="demo03.html" target="tom">我是一个超链接</a>
+		<iframe src="demo01.html" name="tom"></iframe>
+
+		<!--
+			center 标签中的内容，会默认在页面中居中显示
+				可以将要居中的内容放进去，不推荐使用
+		-->
+		<center>
+			<p>段落</p>
+		</center>
+	</body>
+</html>

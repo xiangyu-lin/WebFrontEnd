@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style media="screen">
+
+			p1{
+				color: red;
+				font-size: 30px;
+				font-family: "微软雅黑";
+				/*
+				 * font-style
+				 *  设置文字的斜体
+				 * 		- 可选值
+				 *			normal 默认 正常显示
+				 *			italic 斜体显示
+				 *			oblique 倾斜效果显示
+				 *		- 大部分浏览器不区分效果 一般只用 italic
+				 */
+				font-style: italic;
+
+				/*
+				 * font-weight 设置文本加粗效果
+				 *  可选值：
+				 *		normal 默认值 文字正常显示
+				 *		bold 文字加粗显示
+				 *	 该样式也可以指定 100-900 之间的的9个值
+				 *		但由于用户计算机中没有这么多级别字体
+				 *		所以不能达到想要的效果
+				 *		没什么用！忘掉
+				 */
+
+				font-weight: bold;
+				/* 文本以小型大写字母显示 ，所有字母以大写字母显示，小写的大写要小一点*/
+				font-variant: small-caps;
+			}
+
+			p2{
+				font-size: 50px;
+				font-family: "微软雅黑";
+				font-style: italic;
+				font-weight: bold;
+				font-variant: small-caps;
+			}
+
+			p3{
+				/* 在CSS中还为我们提供了一个样式叫font，
+				使用该样式可以同时设置字体相关所有样式 ，
+				可以将字体样式的值，统一写在font样式中，不通值之间空格隔开
+
+				使用字体样式时，斜体加粗小型大写，没有顺序要求 可不写
+					不写使用默认值，但是要求字体的 大小字体必须写，
+					而且字体必须是最后样式
+					大小倒数第二个。
+
+				实际使用简写属性也会有个比较好的性能
+				*/
+			}
+
+		</style>
+	</head>
+	<body>
+		<p>This is P. 这是段落。</p>
+	</body>
+</html>

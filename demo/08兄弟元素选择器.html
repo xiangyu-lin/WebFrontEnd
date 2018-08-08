@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>兄弟元素选择器</title>
+		<style type="text/css">
+
+			/*
+			 * 为span后的p标签设置黄色背景。
+			 * 后一个兄弟元素
+			 *	- 作用：可以选中一个元素后紧挨着的指定的兄弟元素
+			 *  - 语法： 前一个 + 后一个
+			 * 后面所有兄弟元素
+			 *  - 语法： 前一个 ~ 后一个
+			 */
+
+			span + p{
+				background-color: yellow;
+			}
+
+			span ~ p{
+				background-color: red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<p>This is a P.</p>
+		<p>This is a P.</p>
+		<span>THis is a span</span>
+		<p>This is a P after span.</p>
+		<p>This is a P.</p>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文本标签</title>
+	</head>
+	<body>
+		<!--
+			em 和 strong
+			- 两个标签都表示强调
+				em 表示语气上的强调 默认斜体
+				strong 表示强调内容 比em强烈 ，默认粗体
+
+		-->
+		<p>
+			Today is a <em>nice</em> day!
+		</p>
+
+		<p>
+			<strong>
+				If you don't workhard ,you will not find a good job.
+			</strong>
+		</p>
+
+		<!--
+			i 标签内容斜体
+			b 标签内容加粗
+
+			h5规范规定，对于没有语义，不需要着重内容而是单纯加粗或斜体
+				就可以使用 b标签和i标签
+		-->
+
+		<p>
+			<i>这是 i 标签的内容</i>
+			<b>This is B</b>
+		</p>
+
+		<!--
+			small 标签的内容比父元素中文字小一些
+				在h5中用small 表示一些细则一类的内容。
+				比如： 合同中小字，网站版权声明都可以放到small
+
+			big 没有语义 不怎么用了
+		-->
+		<p>
+			我是p 标签内容
+			<small>I am small in P.</small>
+		</p>
+
+		<!--
+			网页中所有加书名号的内容都可以使用 cite 标签
+				比如 书名 歌名 话剧名 电影名
+		-->
+		<p>
+			<cite>《论语》</cite> 是我最喜欢的书。
+		</p>
+
+		<!--
+		    q 标签表示一个短引用 (行内引用)
+				q 标签引用内容 浏览器会加引号
+
+			blockquote 标签表示一个长引用 （会级引用）
+
+		-->
+
+		<p>
+			子没曰: <q>我前端很厉害！</q>
+		</p>
+
+		<div>
+			老子曰：
+			<blockquote>
+				老子没曰
+			</blockquote>
+		</div>
+
+		<!--
+			sup 设置上标
+			sub 设置下标
+		-->
+		<p>2<sup>3</sup></p>
+		<p>
+			html<a href="#1"><sup>[1]</sup></a>
+		</p>
+		<p>H<sub>2</sub>O</p>
+
+		<!--
+			del 表示删除的内容
+		-->
+		<p>
+			<del>price:17.75$</del> <br>
+			sale:15$
+		</p>
+
+		<!--
+			ins 表示插入内容
+				ins 中内容会自动添加下划线
+		-->
+		<p>The weather is vely <ins>nice!</ins> </p>
+
+		<!--
+			需要在页面中直接编写代码
+			pre 预格式标签，回将代码中格式保存  不会忽略多个空格
+			code 专门用来表示代码
+
+			我们一般结合pre 和code表示一段代码
+		-->
+			<pre>
+				<code>
+					import requests
+					html = requests.get('http://www.baidu.com')
+					for i in html:
+						print(i)
+				</code>
+			</pre>
+
+
+	</body>
+</html>
