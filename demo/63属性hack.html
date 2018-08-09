@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>属性hack</title>
+		<style media="screen">
+			body{
+				background-color: #bfa;
+				/*
+				 * 假设在IE6中需要设置成黄色背景才能和其他浏览器一致
+				 * 希望黄色背景只在IE6中生效
+				 */
+
+				 /*
+				  * 在样式前面加下滑线 只有IE6 认识
+				  * 添加*号的样式 IE7及以下认识
+				  * 样式最后 加 \0 IE8及以上
+				  */
+
+				 _background-color: yellow;
+				 *background-color: yellow;
+				 background-color: yellow \0;
+
+				 /*
+				  * CSS hack 不到万不得已尽量不要使用
+				  */
+			}
+
+			/*
+			 * 在选择器前加 * html  则只有 IE6 认识
+			 */
+			* html body{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+
+	</body>
+</html>

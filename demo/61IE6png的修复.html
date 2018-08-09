@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style media="screen">
+			.box1{
+				width: 600px;
+				height: 800px;
+
+				background-image: url(img/info.png);
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			在IE6 中对图片格式 png24 支持度不高
+				如果使用图片的格式是png24 ，则会导致png效果无法正常显示
+			解决方法
+				1.ps 打开 图片存储为web所用格式 png24 改成png8
+					但有点小问题 png清晰度会有所下降
+				2.使用 JavaScript 来解决该问题，需要向页面引入一个外部的JavaScript文件
+					然后写一下简单的JS代码，来处理该问题
+	 	-->
+		<div class="box1">
+		</div>
+
+		<!-- 在body标签最后引入外部JS文件 -->
+		<script type="text/javascript" src+"js/0.0.8a-min.js"></script>
+		<!-- 再创建一个新的script 标签 并编写一些js代码 -->
+		<script type="text/javascript">
+			//fix() 括号中填css选择器  可以*选所有
+			DD_belatePNG.fix("div,img,")
+		</script>
+
+
+		<!-- 完整代码
+
+		<!–[if IE 6]>
+		<script type="text/javascript" src="js/0.0.8a-min.js"></script>
+		<script type="text/javascript">
+		    DD_belatedPNG.fix('div,img');
+		</script>
+		<![endif]–>
+
+	 	-->
+	</body>
+</html>
