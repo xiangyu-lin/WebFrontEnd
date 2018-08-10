@@ -8,7 +8,7 @@
 				margin: 0;
 				padding: 0;
 			}
-			.box1{
+			.box2{
 				width: 100px;
 				height: 100px;
 				background-color: red;
@@ -18,38 +18,37 @@
 				 *		所以我们可以通过浮动来设置文字环绕图片的效果
 				 */
 
-				/* box1 向左浮动 */
+				/* box2 向左浮动 */
 				float: left;
 			}
 			p{
-				height: 200px;
-				background-color: yellow;
+				background-color: skyblue;
 			}
 
-			.box1{
+			.box2{
 				/*
 				 * 在文档流中，子元素的宽度默认占父元素的全部
 				 *	块元素脱离文档流以后 高度和宽度都被内容撑开
 				 */
-				float: left;
+				float: right;
 			}
 
 			.s1{
 				/* 开启span float
 				 *  内联元素脱离文档流会变成快元素 可以设置宽高
 				 */
-				width: 100px;
-				height: 100px;
+				float: right;
+				width: 200px;
+				height: 200px;
 				background-color: yellow;
 			}
 
 		</style>
 	</head>
 	<body>
-		<div class="box1">
-
+		<div class="box2">
 		</div>
-		<!-- <p>三、
+		<p>三、
 			本地项目与远程服务器项目之间的交互
 			//几个常用的git 命令
 			git init //初始化
@@ -65,7 +64,7 @@
 			git push -u origin master //从本地push到主分支
 			git pull                //pull默认主分支
 			git push                //push默认主分支
-		</p>-->
+		</p>
 		<span class="s1">hello</span>
 	</body>
 </html>

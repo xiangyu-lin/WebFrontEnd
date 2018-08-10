@@ -6,8 +6,8 @@
 		<style type="text/css">
 
 			.p1{
-				/* 设置字体大小 */
-				color: red;
+				/* 设置字体大小颜色 */
+
 				/*
 				 * 设置文字的大小，浏览器中一般默认的文字大小都是16px
 				 *		font-size设置的并不是文字本身的大小，
@@ -17,6 +17,7 @@
 				 *			根据字体不同，显示效果不同
 				 */
 				font-size: 30px;
+				color: red;
 
 				/*
 				 * 通过 font-family 可以指定文字的字体
@@ -44,5 +45,18 @@
 		<p class="p1">
 			我是p标签，This is P.
 		</p>
+
+		<!--
+			网页中字体分为5大类
+				serif(衬线字体)
+				sans-serif (非衬线字体)
+				monospace (等宽字体)
+				cursive (草书字体)
+				fantasy (虚幻字体)
+			可以将字体设置为这些大的类，当设置为大的分类后，
+				浏览器会自动选择指定的字体并应用样式
+			一般讲字体的大分类，指定到font-family 最后 ,保证有个还不错的效果
+		-->
+		<p style="font-size: 50px; font-family: serif;">衬线字体</p>
 	</body>
 </html>
