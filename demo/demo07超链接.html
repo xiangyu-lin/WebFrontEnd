@@ -11,7 +11,7 @@
 				href： 指向链接跳转的目标地址，可以是相对或是绝对路径
 		-->
 
-		<a href="http://www.doer.ren" >我是一个超链接</a>
+		<a href="http://www.doer.ren" >这是一个超链接</a>
 
 		<!--
 			a 标签中的target 属性可以用来指定打开链接的位置
@@ -20,8 +20,32 @@
 					_blank : 在新的窗口中打开
 					可以设置内联框架的name属性值，链接将会在指定的内联框架中打开
 		-->
-		<a href="demo03.html" target="tom">我是一个超链接</a>
+		<a href="demo03.html" target="tom">我也是一个超链接</a> <br><br>
 		<iframe src="demo01.html" name="tom"></iframe>
+
+		<!--
+			跳转到id为bottom的元素所在的位置
+			直接在href中写 #id属性值
+		-->
+		<a href="#bottom">去底部</a>
+
+		<!--
+			如果将链接地址设置为 # ；点击会回到顶部。
+
+			html 中有一个属性所有元素都能设置，该属性作为标签的唯一标识
+			这个属性是 id，id属性在同一页面不能重复
+		-->
+
+		<a id="bottom" href="#">回到顶部</a>
+
+		<!--
+			发送电子邮件超链接，点击打开默认邮件客户端，
+				并将收件人设置为 mailto 后的邮件地址
+			href="mailto：邮件地址"
+		-->
+
+		<br><br>
+		<a href="mailto:3139303033@qq.com">联系我们</a>
 
 		<!--
 			center 标签中的内容，会默认在页面中居中显示
@@ -30,5 +54,6 @@
 		<center>
 			<p>段落</p>
 		</center>
+
 	</body>
 </html>
