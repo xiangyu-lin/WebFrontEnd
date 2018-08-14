@@ -6,7 +6,16 @@
 body{
 	background: url(../img/body-bg.png) repeat-x;
 }
-
+/* 解决高度塌陷问题 */
+.clearfix::before,
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix{
+	zoom: 1;
+}
 /* 固定元素宽度和居中 */
 .w{
 	width: 940px;
@@ -68,5 +77,55 @@ body{
 .banner{
 	/* 设置高度 */
 	height: 356px;
-	background: url(../img/banner-bg.png) no-repeat bottom center;
+	background:url(../img/banner-bg.png) no-repeat bottom center;
+	/* 开启相对定位 */
+	position: relative;
+}
+
+/* 设置导航按钮 */
+.pointer_div{
+	/* 开启绝对定位 */
+	position: absolute;
+	/* 为导航点定位 */
+	top: 314px;
+	left: 15px;
+}
+.pointer_div a{
+	float: left;
+	width: 17px;
+	height: 17px;
+	background: url(../img/pointer.png) no-repeat;
+	margin-left: 4px;
+}
+
+/* 设置超链接hover */
+.pointer_div a.active,
+.pointer_div a:hover{
+	background: url(../img/pointer-active.png) no-repeat;
+}
+
+/* 设置content部分 */
+.content h1{
+	/* 设置居中和字体 */
+	text-align: center;
+	font:bold 24px Georgia;
+	/* 设置内边距 */
+	padding: 6px 0 20px 0;
+	/* background */
+	background: url(../img/line.png) no-repeat bottom center;
+	/* 设置下外边距 */
+	margin-bottom: 38px;
+}
+
+/* 中间的3个div */
+.pl , .cs , .uc{
+	/* 向左浮动 */
+	float: left;
+	width: 300px;
+	height: 100px;
+	background-color: yellow;
+}
+
+.content .cs{
+	margin:0px 20px;
 }
