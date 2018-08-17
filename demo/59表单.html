@@ -31,17 +31,17 @@
 				格式：
 					属性名=属性值&属性名=属性值...
 
-				在文本框中也可以使用value ，该值将会作文文本框默认值显示（默认值不是提示文字）
+				在文本框中也可以使用value ，该值将会作文文本框默认值显示(默认值不是提示文字)
+				placeholder 提示文字, IE8 及以下不支持 需要使用js
+
 		 	-->
 			<!--
 				在html中还为我们提供了一个标签 专门用来选中表单中的提示文字
 				lable标签
 				该标签可以指定一个for属性 该属性值需要指定一个表单项的id值
-
-
 		 	-->
 			<label for="um">用户名 </label>
-			<input id="um" type="text" name="username"> <br><br>
+			<input id="um" type="text" name="username" placeholder="your name"> <br><br>
 
 			<!--
 				密码框

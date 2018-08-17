@@ -5,10 +5,12 @@
 /* 设置body背景 */
 body{
 	background: url(../img/body-bg.png) repeat-x;
+	height: 1500px;
 }
+
 /* 解决高度塌陷问题 */
-.clearfix::before,
-.clearfix::after{
+.clearfix:before,
+.clearfix:after{
 	content: "";
 	display: table;
 	clear: both;
@@ -16,6 +18,7 @@ body{
 .clearfix{
 	zoom: 1;
 }
+
 /* 固定元素宽度和居中 */
 .w{
 	width: 940px;
@@ -105,6 +108,7 @@ body{
 }
 
 /* 设置content部分 */
+
 .content h1{
 	/* 设置居中和字体 */
 	text-align: center;
@@ -118,14 +122,146 @@ body{
 }
 
 /* 中间的3个div */
-.pl , .cs , .uc{
+.content .pl , .content .cs , .content .uc,
+.contact .sc , .contact .nu , .contact .co
+{
 	/* 向左浮动 */
 	float: left;
 	width: 300px;
-	height: 100px;
-	background-color: yellow;
+	/* background-color: yellow; */
 }
 
-.content .cs{
+.content .cs , .contact .co{
 	margin:0px 20px;
+}
+
+/* 设置div中的标题 */
+.content h2{
+	color: #11719e;
+	font: 21px Georgia;
+}
+
+.content .p1{
+	color: #8c8c8c;
+	font: 12px Helvetiva;
+}
+
+/* 设置图片div */
+.content .imgDiv{
+	width: 299px;
+	height: 190px;
+	background: url(../img/img-bg.png) no-repeat;
+	/* 设置上下外边距 */
+	margin: 16px 0 11px 0;
+
+	/* 设置水平居中 */
+	text-align: center;
+	/* 设置上外边距 */
+	padding-top: 12px;
+
+}
+
+/* 设置第二个段落 */
+.content .p2{
+	height: 92px;
+	color: #3e3e3e;
+	font: 13px Helvetiva;
+}
+
+/* 设置按钮样式 */
+.content .a1{
+	/* 设置块元素 */
+	display: block;
+	/* 设置宽高 */
+	width: 163px;
+	height: 40px;
+	/* 背景 */
+	background: url(../img/btn1.png) no-repeat;
+	/* 下划线 */
+	text-decoration: none;
+	color: #016999;
+	font: 12px/40px Helvetiva;
+	text-indent: 1em;
+	margin-bottom: 35px;
+}
+
+/* 设置联系栏背景颜色 标记用 等会删 */
+.contact .sc , .contact .nu , .contact .co{
+	/* background-color: #bfa; */
+	width: 300px;
+	height: 500px;
+}
+
+/* 设置背景 */
+.contact{
+	background: url(../img/line.png) no-repeat top center;
+}
+
+/* 设置联系栏表单项 */
+.contact .txt{
+	width: 286px;
+	height: 33px;
+	line-height: 33px;
+	/* 设置背景图片 */
+	background: url(../img/input.png) no-repeat;
+
+	/*单独为IE6设置一个背景不随元素滚动*/
+	_background-attachment: fixed;
+
+	/* 去除默认边框 */
+	border: none;
+
+	/*  去除默认内边距 */
+	padding: 0 5px;
+	margin: 0px 0px 16px;
+}
+
+.contact .tarea{
+	width: 276px;
+	height: 114px;
+	background: url(../img/textarea.png) no-repeat;
+	/*单独为IE6设置一个背景不随元素滚动*/
+	_background-attachment: fixed;
+
+	border: none;
+	/* 去除滚动条 */
+	overflow: auto;
+	/* 设置文本域不能调整大小 */
+	resize: none;
+	/* 去除默认内外边距 */
+	padding: 10px;
+	margin: 0;
+
+	font-size: 18px;
+}
+
+.contact .btn{
+	width: 163px;
+	height: 32px;
+	background: url(../img/btn2.png) no-repeat;
+	border: none;
+	margin: 11px 0 23px;
+
+	/* 设置字体 */
+	color: white;
+	font: 13px Georgia;
+	text-align: left;
+	text-indent: 1em;
+}
+
+/* 设置标题 */
+.contact h2{
+	color: #444;
+	font: 18px Georgia;
+	/* 设置下边框 */
+	border-bottom: 1px dashed #d3d3d3;
+	/* 设置上下内边距 */
+	padding: 43px 0 10px 0;
+
+	/* 设置下外边距 */
+	margin-bottom: 15px;
+
+	/* 去除默认内外边距 */
+	/* padding: 0;
+	margin: 0; */
 }
