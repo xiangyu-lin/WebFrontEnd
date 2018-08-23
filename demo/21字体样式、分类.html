@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字体样式</title>
+		<style type="text/css">
+
+			.p0{
+				/* 设置字体大小颜色 */
+
+				/*
+				 * 设置文字的大小，浏览器中一般默认的文字大小都是16px
+				 *		font-size设置的并不是文字本身的大小，
+				 *			在页面中，每个文字都是处在一个看不见的框中
+				 *			我们设置 font-size 实际是设置格的高度，并不是字体大小
+				 *			一般情况下文字比格小，也有是比格大
+				 *			根据字体不同，显示效果不同
+				 */
+				font-size: 30px;
+				color: red;
+
+				/*
+				 * 通过 font-family 可以指定文字的字体
+				 *	当采用某种字体时，如果浏览器支持使用该字体，
+				 *		如果字体不支持，则使用默认字体
+				 *	该样式可以同时指定多个字体，多个字体使用逗号分开
+				 *		当使用多个字体时，浏览器优先使用前面的
+				 *		如果没有用下一个
+				 */
+
+				/*
+				 * 浏览器使用的字体默认就是计算机的字体
+				 *	如果计算机中有，则使用 没有就不用
+				 * 在开发中，如果字体太奇怪，用的少，尽量不用
+				 *	有可能用户电脑没有，达不到效果
+				 */
+
+				font-family: arial, 微软雅黑, 华文彩云;
+
+			}
+
+			.p1{
+				color: red;
+				font-size: 30px;
+				font-family: "微软雅黑";
+				/*
+				 * font-style
+				 *  设置文字的斜体
+				 * 		- 可选值
+				 *			normal 默认 正常显示
+				 *			italic 斜体显示
+				 *			oblique 倾斜效果显示
+				 *		- 大部分浏览器不区分效果 一般只用 italic
+				 */
+				font-style: italic;
+
+				/*
+				 * font-weight 设置文本加粗效果
+				 *  可选值：
+				 *		normal 默认值 文字正常显示
+				 *		bold 文字加粗显示
+				 *	 该样式也可以指定 100-900 之间的的9个值
+				 *		但由于用户计算机中没有这么多级别字体
+				 *		所以不能达到想要的效果
+				 *		没什么用！忘掉
+				 */
+
+				font-weight: bold;
+				/* 文本以小型大写字母显示 ，所有字母以大写字母显示，小写的大写要小一点*/
+				font-variant: small-caps;
+			}
+
+			.p2{
+				font-size: 50px;
+				font-family: "微软雅黑";
+				font-style: italic;
+				font-weight: bold;
+				font-variant: small-caps;
+			}
+
+			.p3{
+				/* 在CSS中还为我们提供了一个样式叫font，
+				使用该样式可以同时设置字体相关所有样式 ，
+				可以将字体样式的值，统一写在font样式中，不同值之间空格隔开
+
+				使用字体样式时，斜体加粗小型大写，没有顺序要求 可不写
+					不写使用默认值，但是要求字体的 大小字体必须写，
+					而且字体必须是最后样式
+					大小倒数第二个。
+
+				实际使用简写属性也会有个比较好的性能
+				*/
+
+				font: 20px cursive;
+
+			}
+
+		</style>
+	</head>
+	<body>
+		<p class="p0">我是p标签，This is P0.</p>
+		<p class="p1">我是p标签，This is P1.</p>
+		<p class="p2">我是p标签，This is P2.</p>
+		<p class="p3">我是p标签，This is P3.</p>
+
+		<!--
+			网页中字体分为5大类
+				serif(衬线字体)
+				sans-serif (非衬线字体)
+				monospace (等宽字体)
+				cursive (草书字体)
+				fantasy (虚幻字体)
+			可以将字体设置为这些大的类，当设置为大的分类后，
+				浏览器会自动选择指定的字体并应用样式
+			一般讲字体的大分类，指定到font-family 最后 ,保证有个还不错的效果
+		-->
+		<p style="font-size: 50px; font-family: serif;">衬线字体</p>
+	</body>
+</html>

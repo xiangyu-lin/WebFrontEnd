@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动2</title>
+		<style media="screen">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box2{
+				width: 40px;
+				height: 40px;
+				background-color: red;
+
+				/*
+				 * 浮动元素不会盖住文字，文字会自动环绕在浮动元素的周围，
+				 *		所以我们可以通过浮动来设置文字环绕图片的效果
+				 */
+
+				/* box2 向左浮动 */
+				float: left;
+			}
+			p{
+				background-color: skyblue;
+			}
+
+			.box2{
+				/*
+				 * 在文档流中，子元素的宽度默认占父元素的全部
+				 *	块元素脱离文档流以后 高度和宽度都被内容撑开
+				 */
+				/* float: right; */
+			}
+
+			.s1{
+				/* 开启span float
+				 *  内联元素脱离文档流会变成快元素 可以设置宽高
+				 */
+				float: right;
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box2">
+		</div>
+		<p>By design, conventional signal processors are not intuitive to the
+			needs of the human end-user. Therefore programs are inefficient in how they
+			decide what part of the signal is important (and should be enhanced)
+			or is not (and should be ignored or removed).
+			Yobe takes a fundamentally different approach by joining three
+			separate disciplines into one highly effective solution;
+		</p>
+		<span class="s1">hello</span>
+	</body>
+</html>

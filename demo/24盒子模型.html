@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style media="screen">
+			/*
+			 * 盒子模型
+			 *	- 内容区(content)
+			 *	- 内边距(paddind)
+			 *	- 边框(border)
+			 *	- 外边距(margin)
+			 */
+
+			.box1{
+				/*
+				 *  width 和 height 设置内容区的宽高度
+				 *		width 和 height 只设置内容区大小
+				 *		盒子可见大小由 内容区 内边距 边框共同决定
+				 */
+				width: 100px;
+				height: 100px;
+				background-color: #bfa;
+
+				/*
+				 * 为元素设置边框
+				 *	为元素设置边框必须指定3个样式
+				 *		border-width 边框的宽度
+				 *		border-color 颜色
+				 *		border-style 样式
+				 */
+
+				/* 设置边框宽度 */
+
+
+				/*
+				 * 使用 border-width 可以分别指定四个边框宽度
+				 *
+				 *		如果指定了4个值
+				 *			则指定给 上右下左 顺时针
+				 *		如果给了3个值
+				 *			第二个值给左右两边
+				 *		两个值
+				 *			分别给 上下1个  左右1个
+				 *		1个值 四边相同
+				 *
+				 *		除了border-width
+				 *		CSS还提供了 border-top-width
+				 *			top right bottom left
+				 *
+				 *		颜色style也适用与此规则
+				 */
+
+				border-width: 10px 20px;
+
+				/* 边框颜色 */
+				border-color: red blue;
+
+				/*
+				 *	边框样式
+				 *	 可选值
+				 *		none 默认值，没有边框
+				 *		solid 实线
+				 *		dotted 点状边框
+				 *		dashed 虚线
+				 *		double 双线
+				 */
+				border-style: solid dotted dashed double;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+
+		</div>
+	</body>
+</html>

@@ -2,26 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>层级</title>
+		<title>透明</title>
 		<style media="screen">
-			.box1{
-				width: 100px;
-				height: 100px;
-				background-color: yellow;
-				position: relative;
-				z-index: 2;
-			}
+
 			.box2{
 				width: 100px;
 				height: 100px;
 				background-color: red;
-
-				/* 开启绝对定位 */
-				position:absolute;
-				/* 设置偏移量 */
-				top: 50px;
-				left: 50px;
-				z-index: 25;
 
 			}
 			.box3{
@@ -29,9 +16,8 @@
 				height: 100px;
 				background-color: skyblue;
 				position: absolute;
-				left: 100px;
-				top	100px;
-				z-index: 30;
+				top: 50px;
+				left: 50px;
 
 				/*
 				 * 设置元素透明背景
@@ -60,30 +46,9 @@
 
 			}
 
-			.box4{
-				width: 100px;
-				height: 100px;
-				background-color: orange;
-				position: relative;
-				/*
-				 * 父元素 z-index 层级再高 也不会盖住子元素
-				 */
-				z-index: 20;
-			}
-
-			.box5{
-				width: 50px;
-				height: 50px;
-				background-color: green;
-				position: absolute;
-				z-index: 10;
-			}
 		</style>
 	</head>
 	<body>
-		<div class="box1">
-
-		</div>
 		<div class="box2">
 
 		</div>
