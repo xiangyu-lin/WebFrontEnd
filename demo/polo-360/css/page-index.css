@@ -185,12 +185,7 @@ body{
 	margin-bottom: 35px;
 }
 
-/* 设置联系栏背景颜色 标记用 等会删 */
-.contact .sc , .contact .nu , .contact .co{
-	/* background-color: #bfa; */
-	width: 300px;
-	height: 500px;
-}
+
 
 /* 设置背景 */
 .contact{
@@ -247,12 +242,17 @@ body{
 	font: 13px Georgia;
 	text-align: left;
 	text-indent: 1em;
+
+	/*
+	 * cursor 可以用来设置鼠标指针样式
+	 */
+	cursor: pointer;  /* 小手 */
 }
 
 /* 设置标题 */
 .contact h2{
 	color: #444;
-	font: 18px Georgia;
+	font: 18px/1 Georgia;
 	/* 设置下边框 */
 	border-bottom: 1px dashed #d3d3d3;
 	/* 设置上下内边距 */
@@ -264,4 +264,97 @@ body{
 	/* 去除默认内外边距 */
 	/* padding: 0;
 	margin: 0; */
+}
+
+/* 设置左侧联系栏 */
+.sc .p1{
+	color: #444;
+	font: 12px/1 Helvetica;
+	/* 设置上外边距 */
+
+}
+
+.icon{
+	/* 设置字体大小为0 去除空格 */
+	font-size: 0;
+	margin-top: 4px;
+}
+
+.sc .icon a{
+	/* 设置小图片距离 */
+	margin-right: 6px;
+}
+
+/* 设置左侧第二个标题 */
+.sc .nl{
+	font: bold 18px/1 'Gill Sans MT';
+	/* 设置内边距 */
+	padding: 33px 0 10px;
+
+}
+
+/* 设置左侧表单项 */
+.sc .txt{
+	margin-top: 15px;
+	/* IE6 上外边距 */
+	_margin-top: 18px;
+	margin-bottom: 3px;
+}
+
+/* 设置联系栏右侧 */
+.nu p{
+	color: #444;
+	font: 12px/1 Helvetica;
+	height: 58px;
+	/* IE6 单独设置 */
+	_height: 60px;
+	/* 设置下边框 */
+	border-bottom: 1px dashed #d3d3d3;
+	margin-bottom: 14px;
+	padding-bottom: 9px;
+}
+.nu img{
+	float: left;
+	margin-right: 8px;
+}
+
+.nu .no_margin{
+	margin-bottom: 12px;
+}
+
+.nu .btn {
+	margin-top: 0px;
+}
+
+/* 设置底部 */
+.footer{
+	background-color: #333;
+	height: 173px;
+	border-top: 10px solid #4c4c4c;
+}
+
+/* 设置底部文字样式 */
+.footer a , .footer p{
+	color: #999;
+	font: 11px Helvetica;
+	text-decoration: none;
+}
+
+/* 设置 a元素的 hover */
+.footer a:hover{
+	color: yellow;
+	text-decoration: underline;
+}
+
+.footer p{
+	margin-left: 8px;
+	margin-right: 23px;
+	margin-bottom: 6px;
+}
+.footer .w{
+	padding-top: 18px;
+}
+
+.footer .copy{
+	float: right;
 }
