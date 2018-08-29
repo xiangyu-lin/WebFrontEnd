@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+
+			// 赋值运算符
+			// += -= *= /= %=
+
+			/* 关系运算符
+			 *   关系成立返回 true 关系不成立返回false
+			 *	 对于非数值进行比较时会将其转换成数字再比较
+			 *		任何值和 NaN 做任何比较 都返回 NaN
+			 *		如果符号两边都是字符串，不会将其转换成数字进行比较
+			 *			而是分别比较字符的unicode 编码
+			 *	 >
+			 *   >=
+			 *   <
+			 *   <=
+			 *   !=
+			 */
+
+			// 比较两个字符串时 比较的是字符串的unicode编码
+			// 一位一位进行比较 两个一样才比下一位， 所以借用它来对英文进行排序，比较中文没有意义
+			console.log('a' < 'b');
+
+			// 如果比较两个字符串型的数字， 可能会得到不可预期的结果
+			console.log('111' < '5');
+			// 注意 比较两个字符串型数字时一定要注意转型
+			console.log('111' < +'5');
+
+			// 在网页中使用 unicode 编码
+			// 		&#编码;  这里编码需要 先转成十进制
+
+
+			/* 相等运算符
+			 *   相等返回true 否则返回false
+			 *   ==
+			 *		当使用==比较两个值时，如果值类型不同
+			 *		则会自动进行类型转换
+			 *	!=
+			 *		判断两个值是否相等
+			 *		也会自动类型转换 转换后相等也返回false
+			 *	=== 全等 不会做自动类型转换
+			 *	!==
+			 */
+
+			// undefined 衍生自null
+			// 所以这两个值做相等判断时，会返回 true
+				console.log(undefined == null); // true
+			// NaN 不和任何值相等 包括他本身
+				console.log(NaN == NaN); //false
+
+			b = NaN;
+			console.log(isNaN(b)); // isNaN() 判断函数是否是NaN()
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

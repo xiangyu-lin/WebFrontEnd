@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			 /*
+			  *  条件运算符 也叫三元运算符
+			  *		语法
+			  *			条件表达式?语句1:语句2
+			  *		执行流程
+			  *			条件运算符执行式，首先对条件进行求值，
+			  *				true 执行语句1 返回执行结果
+			  *				false 执行语句2 返回执行结果
+			  */
+
+			 true?alert(1):alert(2);
+			 false?alert(1):alert(2);
+			 var a = 10;
+			 var b = 20;
+			 var c = 50;
+			 a < b ? alert('1'):alert(2);
+			 // get max
+			 var max = a > b ? a : b;
+
+			 // 获取 a b c 中的最大值
+			 var max = max > c ? max : c;
+
+			 // 三元运算符可嵌套使用 但不要写 影响阅读 性能也不会提升
+
+			 // 如果条件表达式求值结果是非布尔值 会先转换成布尔值
+
+			 /*
+			  * , 运算符
+			  *		可以使用, 分隔多个语句 一般声明多个变量用
+			  */
+
+			 var a , v , c ;
+			 var i = 1; j = 2;
+
+			/*
+			 *	运算符优先级
+			 *
+			 *	JS中有个运算符优先级的表
+			 *		上面的优先级高
+			 *		一样高从左往右算
+			 *	不确定的可以使用括号改变优先级
+			 *
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

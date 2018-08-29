@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+
+			/*
+			 * 运算符 也叫操作符
+			 *	对一个或多个值进行运算， 并获取运算结果。
+			 * 	如 typeof() 就是运算符
+			 *
+			 * 算数运算符 + - * / %
+			 *	任何值和NaN运算都得到NaN
+			 *  非Number 值会转换成Number再进行运算(除了字符串加法)
+			 *
+			 *	 + 两个字符串相加 则会字符串拼接 字符串较长时用 + 换行
+			 *     任何值和字符串做加法 都会转换成字符串 然后拼接
+			 *
+			 *   - * / 非Number值转换成Number(除了字符串的加法都会先转成Number)
+			 *
+			 *   % 取模(求余数)
+			 */
+
+			var a = 'first line ' +
+			 		'second line.';
+			console.log(a);
+
+			// 利用加法将任意变量转换成字串
+			var c = 123;
+			c = c + ''; // 其实也是调用String()方法
+			result = 1 + 2 + '3' ; //'33'
+
+			// 利用减法将变量转换成 Number, 原理和Number() 一样
+			var d  = '123';
+			d = d - 0; // 三种都可以
+			e = d * 1;
+			f = d / 1;
+
+			/*
+			 * 一元运算符， 只需要一个操作数
+			 *  + 正号 正号不会对数字产生任何影响
+			 *  - 负号 对数字进行符号取反
+			 *
+			 * 对非Number值会先转换成Number 在进行运算
+			 */
+
+			var a = 123;
+			a = -a;
+			console.log('a = ' + a);
+
+			// 利用正号 + 把其他数据类型转换成 Number, 相当于Number() 函数
+			var i = '123';
+			i = +i;
+			console.log(typeof i);
+
+		 /*
+		  * 自增和自减
+		  *		++  前加加 ++a 后加加 a++ (运算符也有值 a++ 等于原值，++a 等于新值)
+		  *     --  前减减 --a 后减减 a-- (运算符 a-- 原值  --a 新值)
+		  */
+
+		 var j = 1;
+		 j ++;
+		 ++ j;
+		 console.log(j);
+
+		 var k  = 20;
+		 k = k++; // k = 20;
+
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

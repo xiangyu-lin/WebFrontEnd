@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+
+			// 类型转换主要值将其他数据类型转换成Srting Number Boolean
+
+			/*
+			 * 转换成String
+			 *   - 方法一 调用被转换数据类型的 toString() 方法
+			 *			Null 和 Undefinde 没有 toString()方法
+			 *   - 方法二 调用 String 函数 ,变量作为参数
+			 *			对于 Number 和 Boolean 实际上就是调用 toString() 方法
+			 * 			Null 和 Undefined, 转换成字串 'null', 'undefined'
+			 */
+			var a = 123;
+			console.log(typeof a);
+			a = a.toString(); // 转换
+			console.log(typeof a);
+
+		 	a = 123;
+			console.log(typeof a);
+			a = String(a);
+			console.log(typeof a);
+
+			/*
+			 * 转换成Number
+			 * 	方式一 Number() 方法
+			 *	  1. 字符串转数字
+			 *		- 纯数字字符串可以转化为数字
+			 *		- 有非数字的字串 转换成 NaN
+			 *		- 空字符串或 全是空格的字串 转换成 0
+			 *    2. Boolean 转数字
+			 *		true -> 1
+			 *		false -> 0
+			 *    3. Null -> 0
+			 *	  4. undefined -> NaN
+			 *
+			 *  方式二：
+			 *    - 这种方式专门对付字符串,不是String则先转换成字符串
+			 * 	  - parseInt() 转换成证书
+			 *         从左往右读到第一个非数字之前，取前面的数字
+			 *	  - parseFloat()
+			 *		   作用同上 能取小数 读包括一个 . 的数字
+			 */
+
+			var b = '123';
+			console.log(typeof b);
+			b = Number(b);
+			console.log(typeof b);
+
+			var c = '123px';
+			c = parseInt(b);
+			console.log(a);
+
+			d = '123.456px';
+			console.log(parseFloat(d));
+
+			// 间接利用 parseInt() 取整
+			e = 999.111;
+			console.log(parseInt(e));
+
+			// js中 16进制数字需要0x开头
+			a = 0x10;
+			b = 0xff;
+			c = 0xCafe;
+			console.log(a,b,c);
+
+			// 8进制需要零开头
+			d = 070;
+			// '070' 这种字符串有些浏览器会当做8进制解析
+			e = '070';
+			e = parseInt(a, 10 ); // 参数10 为进制
+
+			// 二进制 0b 开头,但并不所有浏览器都支持
+			a = 0b10;
+
+
+			/*
+			 * 转换成Boolean
+			 * 	使用 Boolean() 函数
+			 *  	 数字 --> 布尔值
+			 *			除了 NaN 和0 都为true
+			 * 		字符串 --> 布尔
+			 *			除了空串都为 true
+			 *		Null 和 Undefined 都为 false
+			 *		对象转换成true
+			 *	方法二 两次非运算
+			 */
+
+			var i = 123; // true
+			i = -123; // true
+			i = 0; // false
+			i = Infinity; // true
+			i = NaN; // false
+			console.log(typeof a);
+
+			i = Boolean(i);
+			console.log(typeof i);
+
+		</script>
+
+	</head>
+	<body>
+
+	</body>
+</html>

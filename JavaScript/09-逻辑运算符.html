@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+
+			/*
+			 * JS 中提供三种逻辑运算符 与或非 && || !
+			 *	 ! 非
+			 *		- 非运算对布尔值取反
+			 *		- 两次非运算不变
+			 *		- 非布尔值会先转换成布尔值
+			 *	 && 与
+			 *		- 规则：两个true 返回 true，只要有一个false 返回 false
+			 *		- JS与为短路与 第一个false 就不会判断第二个
+			 *	 || 或
+			 *		- 规则：两个false返回 false，其他返回 true
+			 *		- JS或为短路或 第一个为true 不会检查第二个
+			 *
+			 */
+
+			// 利用非将其他数据类型转换成布尔值,两次取反
+			var a = 10;
+			a = !!a;
+
+			/*
+			 * 与 或 && || 非布尔值的情况
+			 *	- 对于非布尔值进行与或运算时 会先将其转化为布尔值，然后运算，并返回原值
+			 */
+
+			// 与运算 两个true 返回后面的值，有false则返回靠前的false
+			var result = 5 && 6;
+			console.log(result);
+
+			// 或运算 第一个值为true 返回第一个值，一个值为false 返回第二个值
+			result = NaN || 1;
+			result = NaN || 0;
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
