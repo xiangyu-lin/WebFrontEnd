@@ -1,0 +1,74 @@
+/*
+ * POLO360-Mine css file.
+ * Author: xiangyu.lin
+ * Create date: 2019-09-14
+ */
+
+/* Global */
+body{
+	background: url('../img/body-bg.png') repeat-x;
+	/* 等会删除 */
+	background-color: #bfa;
+	height: 2000px;
+}
+
+.w{
+	width: 940px;
+	margin: 0 auto;
+}
+
+/* 解决高度塌陷 */
+.clearfix:before,
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+/* for IE6 */
+.clearfix{
+	zoom: 1;
+}
+
+/* set header */
+
+.header .logo{
+	margin: 37px 107px 46px 15px;
+}
+
+.header ul{
+	float: right;
+}
+
+.header li{
+	list-style: none;
+	float: left;
+	margin: 59px 0 0 0;
+
+	border-left: dashed 1px #d6d6d6;
+	padding: 0 10px;
+}
+
+.header a{
+	color: #666;
+	font: bold 14px Georgia;
+	text-decoration: none;
+}
+
+.header a:hover{
+	color: green;
+}
+
+.header a:active{
+	font-size: 20px;
+}
+.header p{
+	font: 11px Tahoma ;
+	color: #bcbcbc;
+}
+
+.banner{
+	height: 356px;
+	background: url(../img/banner.jpg) no-repeat top center;
+	position: relative;
+}
+/* set content */
