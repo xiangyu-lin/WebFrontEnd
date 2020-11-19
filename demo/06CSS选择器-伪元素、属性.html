@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- 
+	目录
+		01. 伪元素选择器
+		02. 属性选择器
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>伪元素选择器</title>
+		<style type="text/css">
+			/* ################################################  01. 伪元素选择器 */
+			/* 使用伪元素来表示元素中的一些特殊位置 */
+
+			/* 为p中第一个字符设置一个样式 */
+			p::first-letter{
+				color: violet;
+			}
+			/* 为p中的第一行设置一个背景颜色 */
+
+			p::first-line{
+				background-color: yellow;
+			}
+
+			/* :before表示元素最前面的部分
+			 * 	一般before都需要结合content样式一起使用
+			 * 	通过content可以向before或after位置添加一些内容
+			 *
+			 * :after表示元素最后面位置
+			 */
+			p::before{
+				content: "我会出现在段落的最前面";
+				color: #999;
+			}
+			p::after{
+				content: '我会出现在段落最后面';
+				color: orange;
+			}
+
+			/* ################################################# 02. 属性选择器 */
+			
+			/*			
+			 * 属性选择器
+			 * 	- 作用： 可以根据元素中的属性或属性值来选取指定元素
+			 *	- 语法：
+			 * 		[属性名] 选取含有指定属性的元素
+			 *		[属性名="属性值"] 选取含有指定属性值的元素
+			 *		[属性名^="属性值"] 选取以属性值开头的元素
+			 *		[属性名$="属性值"] 选取以属性值结尾的元素
+			 *		[属性名*="属性值"] 包含属性值
+			 */
+
+			/* 为所有有 title 属性的p元素，设置一个背景颜色为黄色 */
+			[title]{
+				color: yellow;
+			}
+
+			/* 为属性值是hello的元素设置一个背景颜色为蓝色 */
+			div[title="hello"]{
+				color: blue;
+			}
+
+			/* 为title属性值以abc开头的元素设置一个背景颜色为红色 */
+			[title^="abc"]{
+				color: red;
+			}
+
+			/* 为title属性值以a结尾的元素设备背景颜色为黑色 */
+			[title$="a"]{
+				color: #000;
+			}
+
+		</style>
+	</head>
+	<body>
+		<p>
+			This is a p <br>
+			This is second line.
+		</p>
+
+	<!-- 属性选择器 -->
+	<div title="hello">this is div title=hello</div>
+	<div title="abc">this is div title=abc</div>
+	<div title="abcd">this is div title=abcd</div>
+	<div title="a">this is div title=a</div>
+	</body>
+</html>

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<style type="text/css">
-			/* 去掉项目符号 */
-			ul{
-				list-style: none;
-			}
-		</style>
-	</head>
-	<body>
-		<!--
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		/* 去掉项目符号 */
+		ul {
+			list-style: none;
+		}
+	</style>
+</head>
+
+<body>
+	<!--
 			html中可以创建3种列表
 					1. 有序列表
 					2. 无序列表
 					3. 定义列表
 		-->
 
-		<!--
+	<!--
 			无序列表
 				- ul 标签创建无序列表
 				- li 在ul中创建一个列表项
@@ -32,13 +34,13 @@
 
 			ul 和 li 都是块元素
 		-->
-		<ul>
-			<li>张飞</li>
-			<li>方长</li>
-			<li>云长</li>
-		</ul>
+	<ul>
+		<li>张飞</li>
+		<li>方长</li>
+		<li>云长</li>
+	</ul>
 
-		<!--
+	<!--
 			有序列表和无序列表类似,只不过用ol代替ul
 			有序号
 			type属性 可以指定序号类型
@@ -47,35 +49,36 @@
 					i,I  罗马数字小写或大写
 	 	-->
 
-		<ol type="I">
-			<li>结构</li>
-			<li>表现</li>
-			<li>行为</li>
-		</ol>
+	<ol type="A">
+		<li>结构</li>
+		<li>表现</li>
+		<li>行为</li>
+	</ol>
 
-		<!--
+	<!--
 			列表之间都是可以互相嵌套的
 			可以在有序放无序或者无序放有序
 		-->
 
-		<!--
+	<!--
 			使定义列表对一些词汇或内容进行定义
 			使用dl来创建一个定义列表
 				dl中有两个子标签
 					dt: 被定义的内容
 					dd: 对定义内容的描述
 		-->
-		<dl>
-			<dt>关羽</dt>
-			<dd>关云长</dd>
-			<dd>二哥叫云长,不叫方长。</dd>
-			<dt>张飞</dt>
-			<dd>张翼德</dd>
-			<dd>来日方长。</dd>
-		</dl>
-		<ul>
+	<dl>
+		<dt>关羽</dt>
+		<dd>关云长</dd>
+		<dd>二哥叫云长。</dd>
+		<dt>张飞</dt>
+		<dd>张翼德</dd>
+		<dd>来日方长。</dd>
+	</dl>
+	<ul>
 
-		</ul>
+	</ul>
 
-	</body>
+</body>
+
 </html>
