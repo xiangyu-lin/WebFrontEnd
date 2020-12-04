@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<!-- 
+	01 文档流
+	02 浮动
+	03 高度塌陷
+
+	-->
+
+<!--
+	############## 01 文档流
+		文档流处在网页最底层表示一个页面中的位置
+		我们所创建的元素默认都处在文档流中
+
+	元素在文档流中的特点
+		块元素
+			1. 块元素在文档流中独占一行 自上向下排列
+			2. 块元素在文档流中默认宽度是父元素 100%，
+			3. 块元素在文档流中高度默认被内容撑开
+		内联元素
+			1. 内联元素在文档流中只占自身大小，会默认从左向右排列
+				如果一行中不足以容纳所有内联元素，则换到下一行，
+				继续自左向右
+			2. 内联元素宽高默认都被内容撑开（在文档流中）
+-->
+<!--
+	当元素的宽度的值为auto时，此时指定内边距不会影响可见框的大小，
+		而是会自动修改宽度，以适应内边距。
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文档流</title>
+		<style>
+			.box1{
+
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			margin-top: 20px;
+
+			/* ################################### 02 浮动
+				* 块元素在文档流中默认垂直排列
+				*	 如果希望块元素在页面中水平排列，可以使块元素脱离文档流
+				*
+				* 使用float使元素浮动，从而脱离文档流
+				*	 可选值
+				*		none 默认值 元素默认在文档流中排列
+				*		left 立即脱离文档流 向左侧浮动
+				*		right 向右侧浮动
+				*
+				* 当为一个元素设置浮动后（float 非none）
+				*	元素会立即脱离文档流，下面的元素会向上移动
+				*	元素浮动后 会尽量向左上或右上漂浮，直
+				*	到遇到父元素边框或者其他的浮动元素
+				* 如果浮动元素上边是一个没有浮动的块元素 则浮动元素不会超过块元素
+				* 浮动的元素不会超过上面的兄弟元素 最多一样齐
+				*/
+			}
+
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: black;
+				float: right;
+			}
+
+			.box3{
+				
+				width: 100px;
+				height: 100px;
+				background-color: slateblue;
+			}
+
+			.box4 {
+				width: 40px;
+				height: 40px;
+				background-color: red;
+
+				/*
+				* 浮动元素不会盖住文字，文字会自动环绕在浮动元素的周围，
+				*		所以我们可以通过浮动来设置文字环绕图片的效果
+				*/
+				float: left;
+			}
+			.span1 {
+				/* 开启span float
+				*  内联元素脱离文档流会变成块元素 可以设置宽高
+				*/
+				float: right;
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+			}
+
+
+			/* ################################# 03 高度塌陷 */
+			.box11{
+				/* 为box1设置边框 */
+				border: 10px royalblue solid;
+
+			}
+			.box12{
+				width: 100px;
+				height: 100px;
+				background-color: turquoise;
+				float: left;
+			}
+
+			/* 
+			* 在文档流中，父元素的高度默认是被子元素撑开的
+			* 	也就是子元素多高，父元素就多高
+			* 但是当为子元素设置浮动后，子元素会完全脱离文档流，
+			*	导致父元素塌陷 则父元素下的所有元素都会向上移动 导致页面布局混乱
+			*
+			* 所以在开发中一定要避免出现高度塌陷的问题
+			*  我们可以将父元素高度写死 避免塌陷问题
+			*	但是一旦高度写死，父元素高度将不能适应子元素高度，所以不推荐使用此方案
+			*
+			*/
+
+			/* 为子元素向左浮动 */
+
+			.box13{
+				width: 100%;
+				height: 100px;
+				background-color: black;
+			}
+
+
+			/* ################################################## 04 解决高度塌陷 */
+			.box21{
+				/* 为box1设置边框 */
+				border: 10px red solid;
+
+				/*
+				 * 根据W3C标准，在页面中元素都有一个隐含的属性叫做 Block Formatting Context
+				 *	简称 BFC，该属性可以设置打开或关闭 默认关闭
+				 *
+				 * 当开启元素BFC以后，元素将会具有如下的特性
+				 *	1.父元素的垂直外边距不会和子元素重叠
+				 *	2.开启BFC的元素不会被浮动元素所覆盖
+				 *	3.开启BFC的元素可以包含浮动的子元素
+				 *
+				 * 如何开启元素的BFC
+				 *	1.设置元素浮动
+				 *		使用这种方式开启 虽然可以撑开父元素，但会导致父元素的宽度丢失
+				 *			也会导致下面元素上移 不能解决问题
+				 *	2.设置元素绝对定位 (不推荐)
+				 *	3.设置元素为inline-block可以解决问题 但会导致宽度丢失，不推荐使用
+				 *	4.将元素的overflow 设置为一个非visible 的值
+				 *
+				 * 推荐方式: 将overflow设置为hidden 是副作用最小的开启BFC的方式
+				 */
+
+
+				/* overflow: hidden; */
+
+				/*
+				 * 但是在IE6及以下浏览器中 并不支持BFC ，所以使用这种方式不能兼容IE6
+				 * 	 在IE6中虽然没有BFC 但有另一个隐含属性叫 hasLayout
+				 *	 开启方式很多，我们直接使用一种副作用最小的
+				 *	 直接将元素的zoom设置为1即可
+				 */
+
+				/*
+				 * zoom 放大的意思 写几就将元素放大几倍
+				 *	zoom:1 表示不放大元素 但通过它可以开启hasLayout
+				 *  zoom 这个样式只在ie 支持所以兼容所有浏览器zoom:1写在前面就好
+				 */
+
+				zoom:1;
+				overflow: hidden;
+
+			}
+			.box22{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				float: left;
+			}
+
+
+			/* 为子元素向左浮动 */
+
+			.box23{
+				width: 100%;
+				height: 100px;
+				background-color: black;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div style="width: 100px; height: 100px; background-color: #bfa;"></div>
+		<div style="width: 100px; height: 100px; background-color: #ff0;"></div>
+
+		<span style="background-color: red;">我是一个span</span>
+		<span style="background-color: red;">我是一个span</span>
+		<hr>
+
+		<!-- float -->
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<hr>
+
+		<!-- float 2 -->
+		<div class="box4"></div>
+		<p>
+			By design, conventional signal processors are not intuitive to the
+			needs of the human end-user. Therefore programs are inefficient in how they
+			decide what part of the signal is important (and should be enhanced)
+			or is not (and should be ignored or removed).
+			Yobe takes a fundamentally different approach by joining three
+			separate disciplines into one highly effective solution;
+		</p>
+		<span class="span1">hello</span>
+		<hr>
+		
+		<!-- 高度塌陷 -->
+		<p>高度塌陷</p>
+		<div class="box11">
+			<div class="box12"></div>
+		</div>
+		<div class="box13"></div>
+
+
+		<!-- 解决高度塌陷 -->
+		<p>解决高度塌陷</p>
+		<div class="box21">
+			<div class="box22"></div>
+		</div>
+		<div class="box23"></div>
+	</body>
+</html>

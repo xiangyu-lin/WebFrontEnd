@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>清除浮动</title>
+		<style media="screen">
+
+			/* 
+				01 清除浮动
+				02 解决高度塌陷2
+				03 解决高度塌陷3
+			*/
+
+			.box1{
+				width: 20px;
+				height: 20px;
+				background-color: yellow;
+				float: left;
+			}
+			.box2{
+				width: 40px;
+				height: 40px;
+				background-color: blue;
+
+				/* ################################ 01 清除浮动
+				 * 由于受到box1浮动影响 box2 整体向上移动100px
+				 *	我们有时希望清除掉其他元素浮动对当前元素产生的影响，
+				 *		这时可以使用clear来完成功能
+				 *
+				 *	clear可以用来清除其他元素浮动对当前元素产生的影响 可选值：
+				 *		none 默认值 不清除浮动
+				 *		left 清除左侧浮动元素对当前元素的影响
+				 *		right 清除右侧浮动对当前元素影响
+				 *		both 清除两侧元素对当前元素的影响，清除对他影响最大的元素的浮动
+				 */
+
+				/*清除box1浮动对box2产生的影响，清除浮动以后 元素会回到浮动之前的位置 */
+				clear: left;
+			}
+			.box3{
+				width: 80px;
+				height: 80px;
+				background-color: green;
+			}
+
+
+			.box11{
+				border: 1px solid red;
+			}
+			.box12{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				float: left;
+			}
+
+			/*
+			 * ################################### 02解决高度塌陷方案二
+			 *	可以直接在高度塌陷的父元素最后加个空白的div
+			 *	由于这个div并没有浮动 所以他是可以撑开父元素高度的
+			 *	然后在对其清除浮动 这样可以通过这个空白的div来撑开父元素高度
+			 *	基本没有副作用 兼容各种浏览器
+			 *
+			 * 使用这种方式虽然可以解决问题，但会在页面中添加多余的结构
+			 */
+			.clear{
+				clear: both;
+			}
+
+
+			/* ##################################### 03 解决高度塌陷 */
+			.box21{
+				border: 1px solid black;
+			}
+			.box22{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				float: left;
+			}
+
+			/*
+			 * 通过after伪类，选中box1的后边
+			 * 	可以通过after伪类 向元素最后添加一个空白的元素，然后对其清除浮动
+			 *	这样做和添加div原理一样 效果相同
+			 *	推荐使用 几乎无副作用
+			 */
+
+			.clearfix:after{
+				/* 添加内容并转换成块元素 */
+				content: "";
+				display: block;
+
+				/* 清除浮动 */
+				clear: both;
+			}
+
+			/*
+			 * IE 6 不支持 :after伪类
+			 * 所以在IE6中还需要使用 hasLayout 处理
+			 */
+			.clearfix{
+				zoom:1;
+			}
+
+		</style>
+	</head>
+	<body>
+		<p>clear: both （left right）清除右侧浮动对当前元素影响</p>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<hr>
+
+		<p>父元素内添加空白div解决高度塌陷</p>
+		<div class="box11">
+			<div class="box12">
+			</div>
+			<div class="clear">
+			</div>
+		</div>
+		<hr>
+
+		<p>父元素after伪类解决高度塌陷</p>
+		<div class="box21">
+			<div class="box22">
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+
+
+	</body>
+</html>
