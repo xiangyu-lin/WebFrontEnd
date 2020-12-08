@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style media="screen">
+			/* 
+				定位
+					01 相对定位 relative
+					02 绝对定位 absolute
+					03 固定定位 fixed
+			*/
+
+			.box1_relative{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.box2_relative{
+				width: 100px;
+				height: 100px;
+				background-color: yellowgreen;
+				/*
+				 * 定位
+				 *  - 定位指的页面的指定元素放到页面的任意位置
+				 *	 通过定位可以任意摆放元素
+				 *	- 通过position属性来设置元素定位
+				 *		- 可选值：
+				 *		statc: 默认值 没开启定位
+				 *		relative 开启元素相对定位
+				 *		absolute 开启元素绝对定位
+				 *		fixed 开启元素固定定位（也是绝对定位一种）
+				 */
+
+				 /*
+				  *  ##################### 01 相对定位
+				  *		1.当开启元素相对定位后，而不设置偏移量时，元素不会发生任何变化
+				  *		2.相对定位时相对元素在文档流中原来的位置移动
+				  *		3.相对定位的元素不会脱离文档流
+				  *		4.相对定位会使元素提升一个层级（冲突时覆盖文档流内容）
+				  * 	5.相对定位不会改变元素性质，块还是块，内联还是内联
+				  */
+				 position: relative;
+				 left:100px;
+				 bottom: 100px;
+
+				/*
+
+				 * 当开启元素定位时，
+				 *	可通过 left right top bottom 四个属性来设置元素偏移量
+				 * 		left 元素相对于其定位位置的左侧偏移量
+				 *		right 元素相对于其定位位置右侧偏移量
+				 *		top	上
+				 *		bottom 下
+				 *
+				 *	通常偏移量只需2个就可以对元素定位
+				 *		垂直水平各选一个
+				 */
+
+			}
+
+			.box3_relative{
+				width: 100px;
+				height: 100px;
+				background-color: black;
+			}
+
+			.box4_absolute{
+				width: 100px;
+				height: 100px;
+				background-color: rebeccapurple;
+
+				/*
+				 * 当position属性值设置为absolute时，则开启了元素的绝对定位
+				 *
+				 * 绝对定位
+				 *	 1.开启绝对定位会使元素脱离文档流
+				 *	 2.开启绝对定位后不设置偏移量，则元素位置不会发生变化
+				 *   3.绝对定位是相当于理他最近的开启了定位的祖先元素进行定位的
+				 *		（一般情况下开启子元素的绝对定位 也要同时开启父元素定位）
+				 *		如果所有的祖先元素都没开启定位，则相对于浏览器窗口进行定位
+				 *	4.绝对定位会使元素提升一个层级
+				 *	5.绝对定位会改变元素的性质
+				 *		内联元素会变成块元素
+				 *		块元素的宽高默认都会被内容撑开
+				 *
+				 */
+
+				position: absolute;
+				/* 无父元素开启定位, 则相对于浏览器定位 */
+				top: 100px;
+			}
+
+			.box5_fixed{
+				/* ############################ 03 绝对定位 fixed
+				 *
+				 * 当position属性值设置为fixed时，则开启了元素的固定定位
+				 *	  固定定位也是一种绝对定位，它的大部分特点和绝对定位一样
+				 * 不同的是：
+				 *	  固定定位永远都相对于浏览器窗口进行定位的
+				 *	  固定定位会固定在窗口某个位置 不会随滚动条滚动
+				 *
+				 *	IE6 不支持固定定位
+				 */
+
+				width: 200px;
+				height: 200px;
+				background-color: sienna;
+				position: fixed;
+				bottom: 200px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box1_relative"></div>
+		<div class="box2_relative"></div>
+		<div class="box3_relative"></div>
+
+		<div class="box4_absolute">div4 absolute top 100</div>
+		<div class="box5_fixed">div5 固定定位 永远相对于浏览器窗口</div>
+
+	</body>
+</html>
