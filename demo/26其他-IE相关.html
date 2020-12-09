@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+
+			
+			/* cursor 可以用来设置鼠标指针样式 */
+			
+			html{
+				cursor: pointer;  /* 小手 */
+			}
+
+			/* 
+				01 属性hack	
+				02 IE6 双倍边距bug
+				03 条件hack
+				04 IE6 png 处理
+			*/
+
+			body{
+				background-color: #bfa;
+				/* ########## 01 属性hack
+				 * 假设在IE6中需要设置成黄色背景才能和其他浏览器一致
+				 * 希望黄色背景只在IE6中生效
+				 */
+
+				 /*
+				  * 在样式前面加下滑线 只有IE6 认识
+				  * 添加*号的样式 IE7及以下认识
+				  * 样式最后 加 \0 IE8及以上
+				  */
+
+				 _background-color: yellow;
+				 *background-color: yellow;
+				 background-color: yellow \0;
+
+				 /*
+				  * CSS hack 不到万不得已尽量不要使用
+				  */
+			}
+
+			/*
+			 * 在选择器前加 * html  则只有 IE6 认识
+			 */
+			* html body{
+				background-color: red;
+			}
+
+
+
+			/*
+			*  ########################## 02 IE 6 双倍边距 bug
+			* 	在IE6中， 当为一个向左浮动的元素设置左外边距
+			*    或者为一个向右浮动的元素设置右外边距时
+			*	  这个外边距将会是设置值的2倍
+			*/
+
+			.box2{
+				width: 100px;
+				height: 100px;
+				float: left;
+
+				/* 添加一个样式解决 IE6 双倍边距问题
+				* 对于一个浮动元素来说设置 display: inline 没有意义
+				* 但能解决  IE6 双倍边距问题
+				*/
+				display: inline;
+
+				background-color: red;
+				margin-left: 100px;
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+
+		<!-- ########################### 条件hack
+			有一些情况，有一些特殊的代码我们只需要在某个特殊的浏览器中执行
+				而在其他的浏览器中不需要执行，这时就需要使用CSS Hack 来解决该问题
+			CSS Hack 实际上指的是一个特殊代码，这段代码只用在某些浏览器中可以识别
+				而其他浏览器不能识别，通过这种方式，来为浏览器设置特殊的代码
+	 	-->
+
+		<!--
+			条件Hack,条件hcak只对浏览器有效，其他的浏览器都将它识别为注释
+				IE10 及以上浏览器已经不支持这种方式
+		-->
+
+		<!-- 一下内容只会出现在IE6中 -->
+		<!--[if IE 6]>
+			<p>请远离IE6</p>
+	 	<![endif]-->
+
+		<!-- 一下内容只会出现在IE8中 -->
+		<!--[if IE 6]>
+			<p>此浏览器是IE8</p>
+		<![endif]-->
+
+		<!--[if lt IE 9]>
+			<p>内容只会出现在IE9 以下IE浏览器中</p>
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+			<p>内容只会出现在IE9 以及以下IE浏览器中</p>
+		<![endif]-->
+
+		<!--[if IE]>
+			<p>IE</p>
+		<![endif]-->
+
+
+		<div class="box2"></div>
+
+		<!-- ###################### 03 IE6 png 处理 
+			在IE6 中对图片格式 png24 支持度不高
+				如果使用图片的格式是png24 ，则会导致png效果无法正常显示
+			解决方法
+				1.ps 打开 图片存储为web所用格式 png24 改成png8
+					但有点小问题 png清晰度会有所下降
+				2.使用 JavaScript 来解决该问题，需要向页面引入一个外部的JavaScript文件
+					然后写一下简单的JS代码，来处理该问题
+	 	-->
+		<div class="box1">
+		</div>
+
+		<!-- 在body标签最后引入外部JS文件 -->
+		<script type="text/javascript" src="js/0.0.8a-min.js"></script>
+		<!-- 再创建一个新的script 标签 并编写一些js代码 -->
+		<script type="text/javascript">
+			//fix() 括号中填css选择器  可以*选所有
+			DD_belatePNG.fix("div,img,")
+		</script>
+
+
+
+
+
+	</body>
+</html>

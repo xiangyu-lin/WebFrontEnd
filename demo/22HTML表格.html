@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 
+				01 在html中使用 table创建表格 
+				02 表格样式
+				03 长表格
+				04 表格布局
+			*/
+
+
+			/* 
+				######################## 02 表格样式
+			*/
+
+			.table_style{
+				width: 500px;
+				/* 居中 */
+				margin: 0 auto; 
+				/* 外边框 */
+				border: 1px solid rebeccapurple;
+				/* table 和td 之间边框有个距离可以用 border-spacing 调整距离 */
+				border-spacing: 0px;
+
+				/*
+				 * border-collapse 可以用来设置表格边框合并
+				 * 如果设置边框合并  border-spacing 自动失效
+				 */
+				border-collapse: collapse;
+				background: #bfa;
+			}
+
+			td , th{
+				border: 2px solid black;
+			}
+			/* 设置各行变色 */
+			tr:nth-child(even){
+				background-color:red;
+			}
+
+			/* 移入行中变色 */
+			tr:hover{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			############### 01 在html中使用 table创建表格
+		-->
+		<table border="1" width="50%" align="center">
+			<!-- table 中用 tr表示行 -->
+			<tr>
+				<!-- 在tr中需要用 td 创建单元格 -->
+				<td>A1</td>
+				<td>A2</td>
+				<!-- rowspan  表示纵向合并单元格 -->
+				<td rowspan="2">A3</td>
+			</tr>
+			<tr>
+				<!-- 在tr中需要用 td 创建单元格 -->
+				<td>B1</td>
+				<td>B2</td>
+
+			</tr>
+			<tr>
+				<!-- 在tr中需要用 td 创建单元格 -->
+				<td>C1</td>
+				<!-- colspan表示横向合并单元格 -->
+				<td colspan="2">C3</td>
+			</tr>
+		</table>
+		<hr>
+
+		<table class="table_style">
+			<tr>
+				<!--
+					可用 th 标签表示表头内容
+					用法和 td 一样 只不过会有默认样式
+				-->
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>住址</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>熏悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>居悟能</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>瞎悟净</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>唐僧</td>
+				<td>男</td>
+				<td>女儿国</td>
+			</tr>
+		</table>
+
+		<!--
+			#################### 03 长表格
+			有些情况下表格是非常长的，
+				这时就需要将表格分为三个部分，表头，主体，表尾
+			在HTML中为我们提供3个标签
+				thead 表头
+				tbody 表格主体
+				tfoot 表格底部
+
+			这三个标签的作用，来区分表格的不同的部分，他们都是table的子标签
+				都需要直接写在table中 tr写在这些标签当中
+
+			thead 内容永远显示在表格头部
+			tfoot 内容永远显示在表格底部
+			fbody 中间
+
+			如果表格中没写tbody 浏览器会自动添加tbody
+			并将所有tr放到tbody中 所以tr并不是tbody子元素
+			通过 table > tr 无法选中行 需要通过 tbody > tr
+		-->
+		<table>
+			<thead>
+				<tr>
+					<th>日期</th>
+					<th>收入</th>
+					<th>支出</th>
+					<th>合计</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>t1</td>
+					<td>t2</td>
+					<td>t2</td>
+					<td>t2</td>
+				</tr>
+
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>count</td>
+					<td>100</td>
+				</tr>
+			</tfoot>
+		</table>
+
+
+		<!-- ################### 04 表格布局
+			以前表格更多情况是用来布局的，但是这种方式早已被CSS所淘汰
+			表格的列数由td最多的决定
+			表格是可以嵌套的
+		-->
+
+		<hr>
+		<table border="1"  width="500px" height="500px">
+			<tr>
+				<td colspan='2'></td>
+			</tr>
+			<tr>
+				<td width='20%'></td>
+				<td width='80%'>
+					<table border="1" width='100%' height='100%'>
+						<tr>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan='2'></td>
+			</tr>
+		</table>
+
+	</body>
+</html>
