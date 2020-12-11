@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var obj = {
+            name: "",
+            age: "",
+            gender: "男",
+            sayName: function(){
+                console.log(this.name);
+                }
+        };
+
+        /*
+            ############################################# 01 使用工厂方法创建对象
+        */
+
+        function createPerson(name, age, gender){
+            var obj = new Object();
+
+            obj.name = "1";
+            obj.age = 18;           
+            obj.gender = "男";
+            obj.sayName = function(){
+                console.log(this.name);
+                }
+
+            return obj;
+
+        }
+
+        var obj2 = new createPerson("111", 123, "女");
+        console.log(obj2);
+
+        /* 
+            使用工厂方法创建的对象都是 Object类型的对象，导致后期无法区分。
+        */
+
+        /* ############################################### 02 构造函数
+            创建构造函数来专门创建某种对象
+            构造函数就是一个普通函数， 习惯上首字母大写。
+            区别：
+                普通函数直接调用
+                构造函数通过new 的方式构造
+
+            构造函数的执行流程
+            1. 立刻创建一个对象
+            2. 将新建的对象设置为函数中的this
+            3. 逐行执行函数中的代码
+            4. 新建的对象作为返回值返回
+        */
+
+        function Persion(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        var per = new Persion("1", 2, "3");
+        console.log(per);
+
+        // 使用 instanceof 是否是一个类的实例 所有对象都是Object后代 所以都会返回true
+        console.log(per instanceof Persion);
+
+
+
+        // ######################################## 修改构造函数 
+        function PersionPlus(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function(){
+                console.log("hello PersonPlus")
+            };
+        }
+
+        var per2 = new PersionPlus("111", 123, "女");
+        var per2 = new PersionPlus("123", 123, "女");
+        // 这样的话每执行一次都会创建一个新的sayName方法，这没有必要
+        // 可以将方法提取到全局作用域。
+        function PersionPlusPlus(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = sayName;
+        }
+        function sayName(){
+                console.log("hello PersonPlus Plus")
+        }
+
+        var per4 = new PersionPlusPlus("111", 123, "女");
+        per4.sayName();
+
+        // 继续修改：
+        // 定义到全局作用域中，污染了命名空间， 且不安全。 可能被别人覆盖。
+        
+        /*
+        ################################  03 引入原型的概念 prototype
+            创建的每一个函数， 解析器都会向函数中添加一个原型 prototype。
+                这个属性对应一个对象 就是原型对象
+            如果作为普通函数， prototype没有任何作用。
+            当函数以构造函数调用时，所创建的对象都有一个隐藏的属性，指向原型。可以同过 __proto__ 来访问  
+
+
+            原型对象就相当于 所有同一个类的实例都可以访问。
+            当访问对象的属性或者方法时， 会在对象自身找。找不到再去原型对象里面找
+        */
+
+        var per5 = new PersionPlusPlus("111", 123, "女")
+        console.log(per5.__proto__);
+
+        // 向原型对象中添加属性
+        function MyClass(){
+        }
+        MyClass.prototype.name = "adog";
+        var mc = new MyClass();
+        console.log("myclass prototype name: " + mc.name)
+
+        // 继续修改：
+
+        function PersionPPP(){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        PersionPPP.prototype.sayName = function sayName2(){
+                console.log("hello: " + this.name);
+        };  
+
+        // 总结 创建构造函数时， 可以将这些对象共有的属性和方法， 统一添加到构造函数的原型对象中。
+
+
+        // 使用in检查对象中是否有某个属性 包括原型对象
+        // 使用 hasOwnProperty() 不包括原型对象。
+        // 原型对象也是对象 也有它的原型对象， 究极套娃， 直到找到Object的原型对象（Object的原型对象没有原型） -- 原型链
+
+        /*
+        ######################################### 04 GC 垃圾回收
+
+        垃圾：
+            当一个对象 没有任何的变量或者属性进行引用时， 将无法操作该对象。
+            JS 中拥有自动的垃圾回收机制。不需要也不能进行垃圾回收操作。
+
+            - 如果不再使用的话 obj = null; 即可
+        */
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

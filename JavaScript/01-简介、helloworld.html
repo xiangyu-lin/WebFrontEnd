@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- JS代码需要编写到script标签中 -->
+		<script type="text/javascript">
+
+			/* ################ 01 hello world
+			 * 控制浏览器弹出一个警告框
+			 * alert(); 弹出窗口
+			 */
+			//alert("first line code.");
+
+			/*
+			 * 让计算机在页面输出一个内容
+			 * document.write(); 向body输出内容
+			 */
+			document.write("hello js.")
+
+			// 向控制台输出内容
+			console.log("这是向控制台输出的内容");
+			console.log("han meimei ")
+
+			// ######################## 02js 基本语法
+			// 单行注释
+			/* 多行注释 */
+			/*
+			 * 1.JS中严格区分大小写。
+			 * 2.JS中每一条语句以分号(;)结尾,
+			 * 	  不写分号浏览器会自动添加，但会消耗资源，而且可能加错。
+			 * 3.JS中会忽略多个空格和换行,可以通过其对代码格式化。
+			 */
+		</script>
+
+		<!-- ################################# 03 编写位置
+			3.1 可以将js代码编写到外部js文件中
+				通过script标签引入
+			写到外部文件中可以在不同的页面中同时引用
+				也可以利用到浏览器缓存机制,推荐使用
+		-->
+		<script type="text/javascript" src='js/script.js'>
+			// 一旦引入文件 此处编写代码代码无效
+			// 如果需要写 在下面另起一个 script 标签
+		</script>
+
+		<!-- 3.2 可以写在script标签中 -->
+		<script type="text/javascript">
+			//alert('code in script');
+		</script>
+
+	</head>
+	<body>
+		<!-- ################################## 03 编写位置
+			3.3 可以将js代码编写到标签的onclick属性中,点击按钮执行
+			虽然可以写在标签属性中，但他们属于结构行为耦合，不方便维护
+		-->
+		<button onclick="alert('hello botton.');">click this botton</button>
+
+		<!--  3.4 可以将js代码编写到超链接的href中,点击超链接执行js -->
+		<a href="javascript:alert('hello link.');">click This link</a>
+		<a href="javascript:;">click This link</a>
+	</body>
+</html>
