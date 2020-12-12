@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Date 对象 
+         * 
+         * 
+         */
+
+        //  代码执行当前时间
+         var d = new Date();
+         console.log(d)
+ 
+        //  指定时间 如下格式 月/日/年 时：分：秒 (年份写完整的4位 避免歧义)
+        var d2 = new Date("12/12/2020 15:08:08")
+        console.log(d2)
+
+        // 方法
+        // 一个月中的某一天 getDate()
+        console.log(d2.getDate());
+        // 一周中的某一天(周几) getDay() 0-6的值 0周日
+        console.log(d2.getDay());
+        // 月份 11代表12月, 0-11 代表 1到12  所以转化时 +1即可
+        console.log(d2.getMonth() + 1);
+        // getFullYear() 年份
+
+
+        /** 
+         * getTime() 获取时间戳 1970年1月1日 0时0分0秒 毫秒数
+         *  1秒等于1000毫秒
+         * 
+         */
+
+        // 
+        time = Date.now();
+        console.log(time);
+
+        console.log(d2.getTime());
+        
+
+    </script>
+</body>
+</html>

@@ -14,13 +14,121 @@
     <script>
         // 创建数组
         var array1 = new Array();
+        var array2 = new Array(10, 20, 30);
+        // 此方法只传一个参数与则是数组长度
+        var array2 = new Array(10);
+
         // 使用typeof 检查数组时 会返回Object
+
+        // 还可以直接使用字面量创建, 并直接指定元素
+        var arr = [];
+        var arr2 = [1, 2, 3, 4, 5];
 
         // 添加元素
         array1[0] = 10;
         array1[1] = 20;
         console.log(array1);
         console.log(array1[1]);
+        console.log(array1[0]);
+
+        // length 可以获取数组长度
+        console.log(array1.length);
+
+        // 数组最后一个位置添加元素
+        array1[array1.length] = 'hjaha';
+
+        // ### 数组的常用方法
+        
+      
+        var arrFunc1 = [];
+        // push 添加一个或者多个 元素 返回新的长度
+        arrFunc1.push(1, 2, 3, 4, 5);
+
+        // pop 删除最后一个元素
+        arrFunc1.pop();
+        console.log(arrFunc1)
+
+        // unshift 开头添加一个或多个, 自动调整索引
+        arrFunc1.unshift("head1", "head2");
+        console.log(arrFunc1);
+
+        // shift 删除第一个元素， 返回删除的元素
+        console.log(arrFunc1.shift());
+        console.log(arrFunc1);
+
+        // ### 数组的遍历
+        for(var i = 0; i<arrFunc1.length; i++){
+            console.log(arrFunc1[i])
+        }
+        console.log("###################")
+        // forEach 遍历数组 只支持IE8 以上
+        arrFunc1.forEach(element => {
+            console.log(element);
+        });
+
+
+        // 回调函数 浏览器会传递3个参数
+            //  1 当前正在遍历的元素
+            //  2 遍历元素的索引
+            //  3 正在遍历的数组
+        arrFunc1.forEach(function(value, index , obj){
+            console.log(value);
+        });
+
+        // 数组另外两个方法
+        // slice(start, end) 从数组中返回选定的元素(新数组) 切片
+        console.log(arrFunc1.slice(0, 2));
+        console.log(arrFunc1.slice(0, -1)); //-1 倒数第一
+        console.log(arrFunc1.slice(1));
+
+        // splice() 删除指定元素, 返回删除过的原数组
+        // 参数 开始位置索引， 删除的数量
+            // 可以添加剩余参数 会插入到删除的开始索引前
+        console.log(arrFunc1);
+        arrFunc1.splice(0, 3);
+        console.log(arrFunc1);
+
+        // 数组的其他方法
+        // concat() 连接多个数组
+        arrc1 = [1, 2];
+        console.log("############");
+        console.log(arrc1.concat(arrFunc1, array1));
+
+        // join 将数组转化成字符串
+        // 可以使用字符串作为参数 作为连接符 默认逗号
+        arrj = arrc1.concat(arrFunc1, array1);
+        console.log(arrj.join("——————"));
+
+        // reverse 反转数组, 对原数组产生音响  
+        console.log(arrj.reverse());
+
+        // sort 排序 按照unicode码
+        // 可以添加回调函数 指定排序规则
+        arrs = ["b", 1, "a", "d"];
+        arrs.sort();
+        console.log(arrs)
+        
+        // 因为Unicode 11在2 前面，可以添加回调函数 指定排序规则 
+        // 浏览器会使用数组中的元素作为实参传递
+        // 另外传两个形参a， b (排序时a一定在b前面)
+        //  根据返回值决定是否交换位置
+        //      返回 > 0   ,  a 在前面
+        //          <=0 ， 位置不变
+        //      a -b 升序
+        //      b -a 降序
+        console.log("###########")
+        arrs2 = [11, 2,  12, 3]
+        arrs2.sort(
+            function(a, b){
+                return a-b;
+            });
+        console.log(arrs2)
+        
+        
+
+
+
+
 
 
 

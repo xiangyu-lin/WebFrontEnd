@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call() 和apply()
+
+        function obj(){
+            console.log(this);
+        }
+        //  都是调用方法的
+        obj();
+        function obj2(){};
+        // call和apply 可以传一个对象， 然后this 就变成了传入的那个对象
+        obj.call(obj2);
+        // obj.apply(obj2);
+
+        // ############### 待办 this 先跳过， 相互套娃过于过分，明年再来看 20201212
+
+
+
+        // ########### 
+
+        // 函数调用时隐含参数出了this 还会传递_arguments
+        /**
+         * arguments 是一个类数组对象（但不是数组）也可通过索引操作
+         *  调用函数时， 传递的实参都会在_arguments 中保存
+         *   argument.length 可以获取实参个数
+         *  即使不定义形参也能使用arguments使用实参
+         *  但是比较麻烦
+         * 
+         * arguments 还有个callee属性 打印当前执行的函数对象
+         * 
+         */
+        function fun(){
+            console.log(arguments.length);
+            console.log(arguments[1]);
+            console.log(arguments.callee);
+        }
+
+        fun(true, 1);
+
+
+    </script>
+</body>
+</html>

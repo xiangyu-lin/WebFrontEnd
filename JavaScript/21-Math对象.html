@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Math);
+        /**
+         * Math 是工具类 和其他对象不同 不用new  直接调用即可。
+         *  math 封装了一些书写方法
+         */
+
+        //  属性 PI
+        console.log(Math.PI)
+
+
+        // 方法
+        // abs() 绝对值
+        console.log(Math.abs(-100))
+
+        // seil 向上取整 ，小数位只要有非0数 就进一
+        console.log(Math.ceil(12.25))// //13
+
+        // floor 向下取整
+        console.log(Math.floor(12.99)); //12
+
+        // Math.round  4舍5入 只看第一位小数
+        console.log(Math.round(12.49)); //12
+
+        // Math.random()  0-1之间的随机数
+        // 可以通过 算数运算符变成想要的数
+        console.log(Math.round(Math.random() * 10 )); //12
+
+        // x-y 之间的随机数
+        // console.log(Math.round(Math.random()*(y-x)+x));
+        console.log(Math.round(Math.random()*(6-5)+5));
+
+        // Math.Max() 最大值 min() 最小值 不限制参数数量
+        console.log(Math.max(10, 12, 20))
+        console.log(Math.min(10, 12, 20))
+
+        // Math.pow(x, y) 返回x的y次方
+        // Math.sqrt() 开方
+
+    </script>
+</body>
+</html>
