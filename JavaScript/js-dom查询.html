@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pic{
+            width: 600px;
+        }
+        .picup{
+            width: 600px;
+            height: 300px;
+            background-image: url(../html&CSS/img/1.jpg);
+        }
+        .picdown{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+        <button id="btn" >我是一个按钮</button>
+        <button id="btn2"  name="btnname" class="btnname">我是一个按钮2</button>
+        <button  name="btnname">我是一个按钮3</button>
+
+        <!-- 练习 切换图片 -->
+        <div class="pic">
+                <div class="picup"></div>
+                <div class="picdown">
+                    <button id="prev">上一张</button>
+                    <button id="next">下一张</button>
+                </div>
+
+
+                <hr>
+
+                <form action="" method="POST">
+                        你爱好的运动是? <input type="checkbox" id="checkedAllBox" / > 全选/全不选
+                        <br>
+                        <input type="checkbox" name="items" value="足球"> 足球
+                        <input type="checkbox" name="items" value="篮球"> 篮球
+                        <input type="checkbox" name="items" value="羽毛球"> 羽毛球
+                        <input type="checkbox" name="items" value="乒乓球"> 乒乓球
+                        <br>
+                        <input type="button" id="checkedAllBtn"  value="全选">
+                        <input type="button" id="checkedNoBtn"  value="全不选">
+                        <input type="button" id="checkedRevBtn"  value="反选">
+                        <input type="button" id="sendBtn"  value="提交">
+                </form>
+
+        </div>
+
+        <div class="box1">
+            <div>1</div>
+            <div>2 </div>
+            <div>2</div>
+
+        </div>
+
+        <script src="./js/dom查询.js"></script>
+</body>
+</html>
