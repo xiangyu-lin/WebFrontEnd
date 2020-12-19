@@ -18,6 +18,10 @@
             text-align: center;
         }
 
+        table, th, td {
+            border:  brown solid 1px;
+        }
+
     </style>
 </head>
 <body>
@@ -76,10 +80,65 @@
         <button id="btn004">按钮4 删除北京节点</button>
         <button id="btn005">按钮5 innerHtml添加广州</button>
 
+        <!-- 练习 添加删除记录-->
 
-        
+        <!-- table 员工 -->
+        <table  id="employeeTable">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>$nbsp;</th>
+            </tr>
+            <tr>
+                <td>Tom</td>
+                <td>Tom@tom.com</td>
+                <td>3000</td>
+                <td><a href="delete?id=001">Delete</a></td>
+            </tr>
+            <tr>
+                <td>Jerry</td>
+                <td>Tom@tom.com</td>
+                <td>3000</td>
+                <td><a href="delete?id=002">Delete</a></td>
+            </tr>
+            <tr>
+                <td>Tom</td>
+                <td>Tom@tom.com</td>
+                <td>3000</td>
+                <td><a href="delete?id=003">Delete</a></td>
+            </tr>
+        </table>
+        <!-- table 添加新员工 -->
+        <table>
+            <div class="tbdiv" style="font-size: 25px;"> 添加新员工</div>
+            <tr>
+                <td>
+                    name:<input type="text" id="name" value="input name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    email:<input type="text" id="email" value="input email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    name:<input type="text" id="salary" value="input Salary">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="add">提交</button>
+                </td>
+            </tr>
+        </table>
+
+
         <script src="./js/dom1查询.js"></script>
         <script src="./js/dom2增删改.js"></script>
+        <script src="./js/dom3练习添加删除记录.js"></script>
+
 
 </body>
 </html>
