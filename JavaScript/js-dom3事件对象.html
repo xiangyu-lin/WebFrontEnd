@@ -4,8 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        #areaDiv{
+            width: 400px;
+            height: 300px;
+            background-color: #bfa;
+        }
+
+        #showMsg{
+            width: 400px;
+            height: 30px;
+            border: 1px solid;
+        }
+
+        #mvdiv{
+            width: 10px;
+            height: 10px;
+            background-color: blueviolet;
+            position: absolute;
+        }
+
+        #maopao{
+            width: 100px;
+            height: 100px;
+            background-color: cornsilk;
+        }
+
+        #s1{
+            background-color: #fff;
+        }
+
+    </style>
+    <script src="./js/dom3事件对象.js"></script>
 </head>
 <body>
+
+    <div id="areaDiv"></div>
+    <div id="showMsg"></div>
+
+    <div id="mvdiv"></div>
+    <hr>
+    <!-- 事件的冒泡  委派 -->
+    <div id="maopao">
+        div
+        <span id="s1">span</span>
+    </div>
     
+    <hr>
+
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">超链接1</a></li>
+        <li><a href="javascript:;" class="link">超链接2</a></li>
+        <li><a href="javascript:;" class="link">超链接3</a></li>
+    </ul>
+
+    <button id="btn01">添加超链接</button>
+
+
+    <!-- 事件的绑定 -->
+    <button id="btn02">事件绑定</button>
+
 </body>
 </html>
